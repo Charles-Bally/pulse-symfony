@@ -1,0 +1,60 @@
+{
+    "name": "pulse-app/pulse-symfony",
+    "description": "Surveillance Pulse pour Symfony : signal de vie, Doctrine, Redis, Messenger et Scheduler détectés tout seuls.",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "homepage": "https://pulse-app.si",
+    "keywords": [
+        "symfony",
+        "bundle",
+        "monitoring",
+        "pulse",
+        "healthcheck"
+    ],
+    "require": {
+        "php": ">=8.1",
+        "pulse-app/pulse-php": "^0.0.1",
+        "symfony/config": "^6.4|^7.0|^8.0",
+        "symfony/console": "^6.4|^7.0|^8.0",
+        "symfony/dependency-injection": "^6.4|^7.0|^8.0",
+        "symfony/event-dispatcher": "^6.4|^7.0|^8.0",
+        "symfony/http-kernel": "^6.4|^7.0|^8.0"
+    },
+    "require-dev": {
+        "doctrine/dbal": "^3.8|^4.0",
+        "doctrine/doctrine-bundle": "^2.11|^3.0",
+        "dragonmantank/cron-expression": "^3.4",
+        "monolog/monolog": "^3.0",
+        "phpstan/phpstan": "^2.1",
+        "phpunit/phpunit": "^10.5|^11.0|^12.0",
+        "symfony/doctrine-messenger": "^6.4|^7.0|^8.0",
+        "symfony/framework-bundle": "^6.4|^7.0|^8.0",
+        "symfony/messenger": "^6.4|^7.0|^8.0",
+        "symfony/monolog-bundle": "^3.10|^4.0",
+        "symfony/scheduler": "^6.4|^7.0|^8.0",
+        "symfony/yaml": "^6.4|^7.0|^8.0"
+    },
+    "suggest": {
+        "symfony/monolog-bundle": "recopie des journaux vers Pulse",
+        "symfony/scheduler": "planning et passages des tâches planifiées",
+        "symfony/messenger": "surveillance des files"
+    },
+    "autoload": {
+        "psr-4": {
+            "Pulse\\Symfony\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Pulse\\Symfony\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "analyse": "phpstan analyse --no-progress --memory-limit=1G"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable"
+}
