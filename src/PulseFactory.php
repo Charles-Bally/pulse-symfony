@@ -20,7 +20,7 @@ use Symfony\Component\HttpKernel\Kernel;
 
 final class PulseFactory
 {
-    public const VERSION = '0.0.1';
+    public const VERSION = '0.0.2';
 
     /**
      * @param array<string, mixed> $options
@@ -59,7 +59,7 @@ final class PulseFactory
 
     public function meta(): PackageMeta
     {
-        return new PackageMeta('pulse-symfony', Versions::of('pulse-app/pulse-symfony', self::VERSION) ?? self::VERSION, 'symfony', Kernel::VERSION);
+        return new PackageMeta('pulse-symfony', Versions::of('pulse-si/symfony', self::VERSION) ?? self::VERSION, 'symfony', Kernel::VERSION);
     }
 
     public function workerLogger(): Logger

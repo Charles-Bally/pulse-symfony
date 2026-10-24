@@ -19,7 +19,7 @@ Une requête PHP est courte : le rapport ne part donc jamais d'une requête web.
 ## En deux minutes
 
 ```bash
-composer require pulse-app/pulse-symfony
+composer require pulse-si/symfony
 ```
 
 Ajoute le bundle s'il n'y est pas déjà :
@@ -195,7 +195,7 @@ Le mode sécurisé demande les extensions `sodium` et `openssl` de PHP (présent
 - **Rien n'est écrit chez toi.** Les contrôles ne font que lire (`SELECT 1`, `PING`, nombre de messages), avec 5 secondes au plus. Le bundle n'écrit que dans `var/pulse/`. Les transports AMQP ne sont pas comptés : les interroger déclare la file.
 - **Rien de superflu ne part.** Ni requête, ni donnée métier, ni variable d'environnement. Les messages d'erreur sont nettoyés et coupés à 300 caractères.
 - **La clé ne voyage qu'en HTTPS**, dans un en-tête, jamais dans une URL. Elle ne sert qu'à écrire l'état de cette app : elle n'ouvre pas ton compte.
-- **Une seule dépendance** en dehors de Symfony : `pulse-app/pulse-php`, qui n'utilise que des extensions courantes de PHP.
+- **Une seule dépendance** en dehors de Symfony : `pulse-si/php`, qui n'utilise que des extensions courantes de PHP.
 
 ## Variables
 
